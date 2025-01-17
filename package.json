@@ -3,7 +3,7 @@
   "repository": "github:fabiospampinato/tiny-encryptor",
   "description": "A tiny opinionated isomorphic library for encrypting and decrypting with ease.",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
