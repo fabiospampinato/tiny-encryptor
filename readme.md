@@ -15,7 +15,7 @@ A tiny opinionated isomorphic library for encrypting and decrypting with ease.
 ## Install
 
 ```sh
-npm install --save tiny-encryptor
+npm install tiny-encryptor
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install --save tiny-encryptor
 ```ts
 import Encryptor from 'tiny-encryptor';
 
-// Encrypt some data
+// Let's encrypt some data
 
 const data = 'Hello Encryption!'; // The input data to encrypt could be a string, an ArrayBuffer, or a Uint8Array
 const secret = 'P@assword!'; // The secret could be a string, a Uint8Array, or already a CryptoKey
@@ -31,7 +31,7 @@ const salt = undefined; // The salt could be a string or a Uint8Array, if it's n
 const pbkdf2Rounds = 1000; // The number of rounds of PBKDF2 key derivation to perform, it'll be 1 at minimum, to mix the secret and the salt together, but you can set it higher
 const encrypted = await Encryptor.encrypt ( data, secret, salt, pbkdf2Rounds ); // => Encrypted Uint8Array
 
-// Decrypt some data
+// Let's decrypt some data
 
 const decrypted = await Encryptor.decrypt ( encrypted, secret ); // => Decrypted Uint8Array
 ```
