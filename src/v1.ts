@@ -41,10 +41,10 @@ const decrypt = async ( input: Uint8Array, secret: CryptoKey | Uint8Array | stri
 
   if ( version !== 1 ) throw new Error ( 'Unsupported encrypted archive version' );
 
-  const salt = input.slice ( 1, 33 );
-  const rounds = Int32.decode ( input.slice ( 33, 37 ) );
-  const iv = input.slice ( 37, 53 );
-  const encrypted = input.slice ( 53 );
+  const salt = input.subarray ( 1, 33 );
+  const rounds = Int32.decode ( input.subarray ( 33, 37 ) );
+  const iv = input.subarray ( 37, 53 );
+  const encrypted = input.subarray ( 53 );
 
   const keyRaw = await pbkdf2.sha256.uint8 ( secret, salt, rounds, 32 );
   const key = await webcrypto.subtle.importKey ( 'raw', keyRaw, 'AES-GCM', false, ['decrypt'] );
